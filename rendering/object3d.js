@@ -1,5 +1,5 @@
-// import { mat4, vec3 } from "gl-matrix";
-import { mat4 } from "../libs/glMatrix/index.js";
+import { mat4 } from "../../libs/glMatrix/index.js"; // import { mat4, vec3 } from "../libs/glMatrix/index.js";
+
 export class Object3D {
   constructor() {
     this.children = new Set();
