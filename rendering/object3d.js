@@ -1,9 +1,8 @@
-import { mat4 } from "../../libs/glMatrix/index.js"; // import { mat4, vec3 } from "../libs/glMatrix/index.js";
-
+import { Matrix4x4 } from "../math/matrix4x4.js";
 export class Object3D {
   constructor() {
     this.children = new Set();
-    this.modelViewMatrix = mat4.create();
+    this.modelViewMatrix = new Matrix4x4();
   }
 
   traverse(traverseCallback) {
@@ -33,13 +32,13 @@ export class Object3D {
     this.children.add(child);
   }
 
-  translateByVec(by) {
-    mat4.translate(this.modelViewMatrix, this.modelViewMatrix, by);
+  translate(by) {
+    this.modelViewMatrix.translate(by);
     return this;
   }
 
-  translateByCoords(x, y, z) {
-    mat4.translate(this.modelViewMatrix, this.modelViewMatrix, [x, y, z]);
+  translateByValues(x, y, z) {
+    this.modelViewMatrix.translateByValues(x, y, z);
     return this;
   }
 

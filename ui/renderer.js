@@ -4,6 +4,7 @@ export class Renderer extends Component {
   //Override component's element member
   autoClearColor = true;
   autoClearDepth = true;
+  zoom = 1;
 
   constructor(opts = undefined) {
     super();

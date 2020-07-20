@@ -23,14 +23,14 @@ let mesh = new BufferMesh().setMaterial(material); //Add a triangle
 builder.addTri(builder.addVert(0, 0, 0), builder.addVert(1, 0, 0), builder.addVert(1, 1, 0)).build(mesh); //Make sure mesh buffers are updated
 
 mesh.update(renderer.ctx);
-mesh.translateByCoords(0, 0, -5); //Add mesh to scene
+mesh.translateByValues(0, 0, -5); //Add mesh to scene
 
 scene.add(mesh);
 let mesh2 = new BufferMesh().setMaterial(material);
 builder.addTri(builder.addVert(0, 0, 0), builder.addVert(1, 0, 0), builder.addVert(1, 1, 0)).build(mesh2); //Make sure mesh buffers are updated
 
 mesh2.update(renderer.ctx);
-mesh2.translateByCoords(1, 0, -5); //Add mesh to scene
+mesh2.translateByValues(1, 0, -5); //Add mesh to scene
 
 scene.add(mesh2); //Camera and scene
 
@@ -50,7 +50,7 @@ let onAnim = () => {
   timeLast = timeNow;
   timeNow = Date.now();
   timeDelta = timeNow - timeLast;
-  mesh.translateByCoords(0, // input.raw.consumeMovementX() / sensitivity, 
+  mesh.translateByValues(0, // input.raw.consumeMovementX() / sensitivity, 
   0, //-input.raw.consumeMovementY() / sensitivity,
   input.raw.consumeMovementY() / sensitivity); //camera.translateByCoords(-mx/250, my/250, 0);
   //camera.update();

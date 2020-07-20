@@ -48,9 +48,9 @@ export class BufferMesh extends Object3D {
     } //Pass renderer.camera's projection to shader
 
 
-    ctx.uniformMatrix4fv(this.material.shader.glProjectionAttributePointer, false, renderer.camera.projectionMatrix); //Pass model view matrix to shader
+    ctx.uniformMatrix4fv(this.material.shader.glProjectionAttributePointer, false, renderer.camera.projectionMatrix.data); //Pass model view matrix to shader
 
-    ctx.uniformMatrix4fv(this.material.shader.glModelViewAttributePointer, false, this.modelViewMatrix); //Draw
+    ctx.uniformMatrix4fv(this.material.shader.glModelViewAttributePointer, false, this.modelViewMatrix.data); //Draw
 
     ctx.drawArrays(ctx.TRIANGLES, 0, this.vertexCount);
   }
